@@ -1,0 +1,20 @@
+﻿
+Notes about what I want to add to the Game...
+
+1. Need to create a base.  Base will need defenses that can be upgraded.
+
+2. Base will have a chest to hold supplies.
+
+3. Base can be raided by enemies.
+
+4. Character will need to store a distance from base. to show how far they have traveled. They will need to go back to base to get supplies.
+
+5. Character needs a way to carry supplies. A knapsack maybe.
+
+6. Character needs a damage deflection. That way the effect of a hit will be less for a heavy character than it would be for a smaller character. Similar characters would not use this damage deflection property.
+
+7.  Need to think of different kinds of characters and add classes for them.
+
+8. Need to think of different kinds of weapons and which characters can use those weapons.
+
+9.  Have a magician character.  This character will be able to assist other characters as long as they are close to the magician.
