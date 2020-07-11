@@ -10,15 +10,12 @@ namespace Game
     public class Battle
     {
         public Battle()
-        {
-            
-
+        {   
         }
 
         public void Hit(Character character, Character opponent)
         {
             opponent.Health -= character.HitPoints;
-
         }
 
         public void Fight(Character character)

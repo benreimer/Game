@@ -53,9 +53,7 @@ namespace Game
         public string SaveGame()
         {
             return "Game has been saved";
-
-        }
-        
+        }        
 
         public Character CreateNewCharacter()
         {

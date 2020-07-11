@@ -8,7 +8,6 @@ namespace Game.Characters
 {
     public class Gunner: Character
     {
-
         public Gunner()
         {
             CharacterClassName = "Gunner";

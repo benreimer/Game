@@ -8,7 +8,6 @@ namespace Game
 {
     public class Weapon
     {
-
         public string Name;
         public int Damage;
     }

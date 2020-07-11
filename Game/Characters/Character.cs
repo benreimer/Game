@@ -15,18 +15,12 @@ namespace Game
         public Weapon Weapons;
         public Armor Armor;     
 
-
         public void ViewStats()
         {
-
             Console.WriteLine($"Character Class Name: {CharacterClassName}");
             Console.WriteLine($"Health: {Health}");
             Console.WriteLine($"Hit Points: {HitPoints}");
             Console.WriteLine($"Max Speed: {MaxSpeed}");
-
         }
-
-
-
     }
 }
