@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class Weapon
+    public class Weapon
     {
 
         public string Name;

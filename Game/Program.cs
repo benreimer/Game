@@ -36,13 +36,21 @@ namespace Game
                         break;
                     case "3":
                         Console.WriteLine("Create Character");
-                        character.CharacterType = utilities.CreateNewCharacter();
-                        character.AssignCharacterAttributes();
+                        character = utilities.CreateNewCharacter();                     
                         break;
                     case "4":
                         Console.WriteLine("Save Game Data");
                         utilities.SaveGame();
-                        break;                   
+                        break;
+                    case "5":
+                        Console.WriteLine("View Character Stats");
+                        character.ViewStats();
+                        break;
+                    case "6":
+                        Console.WriteLine("Fight a Battle with your character");
+                        Battle battle = new Battle();
+                        battle.Fight(character);
+                        break;
                     case "7":
                         Environment.Exit(1);
                         break;

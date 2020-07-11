@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class Armor
+    public class Armor
     {
         public string Name;
         public int DefensePoints;
