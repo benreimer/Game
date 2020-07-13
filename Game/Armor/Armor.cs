@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Game
+namespace Game.Armor
 {
+    [Serializable()]
     public class Armor
     {
         public string Name;

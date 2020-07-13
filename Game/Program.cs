@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using Game.Characters;
 
 namespace Game
 {
@@ -6,6 +8,7 @@ namespace Game
     {
         public bool ExitLoop;
         public string Path;
+       // public Game Game;
 
         [STAThread]
         static void Main()
@@ -18,6 +21,7 @@ namespace Game
         {
             Utilities utilities = new Utilities();
             Character character = new Character();
+            Game game = new Game();
        
 
             utilities.DisplayHeader();
@@ -30,6 +34,7 @@ namespace Game
                 {
                     case "1":
                         Console.WriteLine("Start New Game");
+                        game.StartNewGame();
                         break;
                     case "2":
                         Console.WriteLine("Load Saved Game");
@@ -40,7 +45,12 @@ namespace Game
                         break;
                     case "4":
                         Console.WriteLine("Save Game Data");
-                        utilities.SaveGame();
+                        string xmlString = game.XmlSerialize();
+                        string outputXmlFile = $@"C:\GIT\Game\SavedGameData.xml";
+                        File.WriteAllText(outputXmlFile, utilities.PrettyXml(xmlString));
+
+                        Console.WriteLine("Game has been saved");
+                       // game.SaveGame();
                         break;
                     case "5":
                         Console.WriteLine("View Character Stats");

@@ -49,6 +49,8 @@
     <Compile Include="Characters\FastRunner.cs" />
     <Compile Include="Characters\Gunner.cs" />
     <Compile Include="Characters\HeavyHitter.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />

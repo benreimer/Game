@@ -1,0 +1,15 @@
+<Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>NEW GAME</Name>
+  <Character xsi:type="Gunner">
+    <CharacterClassName>Gunner</CharacterClassName>
+    <Health>100</Health>
+    <HitPoints>45</HitPoints>
+    <MaxSpeed>85</MaxSpeed>
+    <Weapons>
+      <Damage>0</Damage>
+    </Weapons>
+    <Armor>
+      <DefensePoints>0</DefensePoints>
+    </Armor>
+  </Character>
+</Game>

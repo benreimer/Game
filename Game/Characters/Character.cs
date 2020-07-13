@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Game.Weapons;
 
-namespace Game
+namespace Game.Characters
 {
+    [Serializable()]
     public class Character
     {
         public string CharacterClassName;
@@ -13,7 +11,7 @@ namespace Game
         public int HitPoints;
         public int MaxSpeed;
         public Weapon Weapons;
-        public Armor Armor;     
+        public Armor.Armor Armor;     
 
         public void ViewStats()
         {

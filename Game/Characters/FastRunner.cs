@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Game.Weapons;
 
 namespace Game.Characters
 {
+    [XmlInclude(typeof(Character))]
+    [Serializable()]
+
     public class FastRunner: Character
     {
         public FastRunner()
@@ -15,7 +16,7 @@ namespace Game.Characters
             HitPoints = 20;
             MaxSpeed = 100;
             Weapons = new Weapon();
-            Armor = new Armor();
+            Armor = new Armor.Armor();
         }
     }
 }

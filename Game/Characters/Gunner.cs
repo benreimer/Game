@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Game.Weapons;
 
 namespace Game.Characters
 {
+    [XmlInclude(typeof(Character))]
+    [Serializable()]
+
     public class Gunner: Character
     {
         public Gunner()
@@ -15,7 +16,7 @@ namespace Game.Characters
             HitPoints = 45;
             MaxSpeed = 85;
             Weapons = new Weapon();
-            Armor = new Armor();
+            Armor = new Armor.Armor();
         }
     }
 }
