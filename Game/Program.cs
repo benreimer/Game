@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Game
 {
@@ -8,7 +9,6 @@ namespace Game
     {
         public bool ExitLoop;
         public string Path;
-       // public Game Game;
 
         [STAThread]
         static void Main()
@@ -20,7 +20,6 @@ namespace Game
         private void Run()
         {
             Utilities utilities = new Utilities();
-          //  Character character = new Character();
             Game game = new Game();
        
 
@@ -38,26 +37,24 @@ namespace Game
                         break;
                     case "2":
                         Console.WriteLine("Load Saved Game");
-                        XmlSerializer serializer = new XmlSerializer(typeof(Game));
-                        var fileName = $@"C:\GIT\Game\SavedGameData.xml";
-                        using (Stream reader = new FileStream(fileName, FileMode.Open))
+                        //find absolute path - put this in utilities
+                        //https://stackoverflow.com/questions/15653921/get-current-folder-path/23513793#23513793
+                        var fileName = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        using (StreamReader reader = new StreamReader(fileName))
                         {
-                            game = (Game) serializer.Deserialize(reader);
+                            string json = reader.ReadToEnd();
+                            game = JsonConvert.DeserializeObject<Game>(json);
                         }
-                        //game = Game.LoadSavedGame();
                         break;
                     case "3":
                         Console.WriteLine("Create Character");
-                     //   character = utilities.CreateNewCharacter();                     
                         break;
                     case "4":
                         Console.WriteLine("Save Game Data");
-                        string xmlString = game.XmlSerialize();
-                        string outputXmlFile = $@"C:\GIT\Game\SavedGameData.xml";
-                        File.WriteAllText(outputXmlFile, utilities.PrettyXml(xmlString));
-
+                        string output = JsonConvert.SerializeObject(game);
+                        string outputFile = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        File.WriteAllText(outputFile, output);
                         Console.WriteLine("Game has been saved");
-                       // game.SaveGame();
                         break;
                     case "5":
                         Console.WriteLine("View Character Stats");

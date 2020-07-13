@@ -31,25 +31,6 @@ namespace Game
             Map = new Map();
             CurrentLevel = new Level {LevelNumber = 1};
             Shop = new Shop();
-            //  return game;
         }
-
-      //  public static Game LoadSavedGame(string filePath)
-      //  {
-           // return File.ReadAllText(filePath).XmlDeserialize<Game>();
-     //   }
-
-
-        public void SaveGame()
-        {
-           // string xmlString = game.XmlSerialize();
-            //remove this string from the assessmentDefinition xml: <StartDate>0001-01-01T00:00:00</StartDate><EndDate>0001-01-01T00:00:00</EndDate>
-           // File.WriteAllText(outputXmlFile, utilities.PrettyXml(xmlString.Remove(xmlString.IndexOf("<StartDate>", StringComparison.Ordinal), 80)));
-
-            Console.WriteLine("Game has been saved");
-
-        }
-
-      
     }
 }
