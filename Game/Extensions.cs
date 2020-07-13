@@ -29,6 +29,18 @@ namespace Game
             }
         }
 
+      //  public void static Game XmlDeserialize<T>(this string serializedData) where T : new()
+       // {
+         //   var returnObj= new Game();
+         //   var xs = new XmlSerializer(typeof(Game));
+         //   using (var xmlReader = new XmlTextReader(new StringReader(serializedData)))
+          //  {
+         //       returnObj = (Game)xs.Deserialize(xmlReader);
+         //   }
+
+        //    return returnObj;
+      //  }
+
         private class EncodingSwitchStringWriter : StringWriter
         {
             public EncodingSwitchStringWriter(Encoding encoding)

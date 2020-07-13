@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace Game
 {
@@ -37,6 +38,13 @@ namespace Game
                         break;
                     case "2":
                         Console.WriteLine("Load Saved Game");
+                        XmlSerializer serializer = new XmlSerializer(typeof(Game));
+                        var fileName = $@"C:\GIT\Game\SavedGameData.xml";
+                        using (Stream reader = new FileStream(fileName, FileMode.Open))
+                        {
+                            game = (Game) serializer.Deserialize(reader);
+                        }
+                        //game = Game.LoadSavedGame();
                         break;
                     case "3":
                         Console.WriteLine("Create Character");

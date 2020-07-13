@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.Remoting.Activation;
 using System.Xml.Serialization;
 using Game.Characters;
@@ -32,6 +33,11 @@ namespace Game
             Shop = new Shop();
             //  return game;
         }
+
+      //  public static Game LoadSavedGame(string filePath)
+      //  {
+           // return File.ReadAllText(filePath).XmlDeserialize<Game>();
+     //   }
 
 
         public void SaveGame()

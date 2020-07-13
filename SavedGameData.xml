@@ -1,10 +1,10 @@
 <Game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>NEW GAME</Name>
-  <Character xsi:type="Gunner">
-    <Class>Gunner</Class>
+  <Character xsi:type="HeavyHitter">
+    <Class>HeavyHitter</Class>
     <Health>100</Health>
-    <HitPoints>45</HitPoints>
-    <MaxSpeed>85</MaxSpeed>
+    <HitPoints>60</HitPoints>
+    <MaxSpeed>65</MaxSpeed>
     <Coins>100</Coins>
     <Weapons>
       <Damage>0</Damage>
