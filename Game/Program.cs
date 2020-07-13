@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using Game.Characters;
 
 namespace Game
 {
@@ -20,7 +19,7 @@ namespace Game
         private void Run()
         {
             Utilities utilities = new Utilities();
-            Character character = new Character();
+          //  Character character = new Character();
             Game game = new Game();
        
 
@@ -41,7 +40,7 @@ namespace Game
                         break;
                     case "3":
                         Console.WriteLine("Create Character");
-                        character = utilities.CreateNewCharacter();                     
+                     //   character = utilities.CreateNewCharacter();                     
                         break;
                     case "4":
                         Console.WriteLine("Save Game Data");
@@ -54,12 +53,12 @@ namespace Game
                         break;
                     case "5":
                         Console.WriteLine("View Character Stats");
-                        character.ViewStats();
+                        game.Character.ViewStats();
                         break;
                     case "6":
                         Console.WriteLine("Fight a Battle with your character");
                         Battle battle = new Battle();
-                        battle.Fight(character);
+                        battle.Fight(game.Character);
                         break;
                     case "7":
                         Environment.Exit(1);

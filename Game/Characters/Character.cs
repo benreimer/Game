@@ -6,16 +6,18 @@ namespace Game.Characters
     [Serializable()]
     public class Character
     {
-        public string CharacterClassName;
+        public string Class;
         public int Health;
         public int HitPoints;
         public int MaxSpeed;
+        public int Coins;
         public Weapon Weapons;
-        public Armor.Armor Armor;     
+        public Armor.Armor Armor;
+        public int Level;
 
         public void ViewStats()
         {
-            Console.WriteLine($"Character Class Name: {CharacterClassName}");
+            Console.WriteLine($"Character Class Name: {Class}");
             Console.WriteLine($"Health: {Health}");
             Console.WriteLine($"Hit Points: {HitPoints}");
             Console.WriteLine($"Max Speed: {MaxSpeed}");

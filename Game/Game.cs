@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Activation;
 using System.Xml.Serialization;
 using Game.Characters;
 
@@ -9,6 +10,10 @@ namespace Game
     {
         public string Name;
         public Character Character;
+        public Base Base;
+        public Map Map;
+        public Level CurrentLevel;
+        public Shop Shop;
 
         [XmlIgnore()]
         public Utilities Utilities = new Utilities();
@@ -21,7 +26,11 @@ namespace Game
             Console.WriteLine("Starting a new game....");
             Console.WriteLine("");
             Character = Utilities.CreateNewCharacter();
-          //  return game;
+            Base = new Base();
+            Map = new Map();
+            CurrentLevel = new Level {LevelNumber = 1};
+            Shop = new Shop();
+            //  return game;
         }
 
 

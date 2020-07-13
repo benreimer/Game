@@ -18,3 +18,13 @@ Notes about what I want to add to the Game...
 8. Need to think of different kinds of weapons and which characters can use those weapons.
 
 9.  Have a magician character.  This character will be able to assist other characters as long as they are close to the magician.
+
+10. Create a mercenary character.  These will show up on the map from time to time and can be hired to help you out.  They will have usually be in favor of one sect or another so watch out, they might turn on you.
+
+11. Game will need coins.  The will use these to buy supplies at a shop or pay for mercenaries to help them out.
+
+12. Will need to create a shop that will allow the user to shop for supplies such as food, armor or weapons.
+
+13. Need to think about how to handle levels. 
+
+14. Need to think about how to build Maps - what elements will these have?

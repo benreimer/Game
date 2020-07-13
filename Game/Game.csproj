@@ -44,15 +44,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Armor\Armor.cs" />
+    <Compile Include="Base.cs" />
     <Compile Include="Battle.cs" />
     <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Mercenary.cs" />
+    <Compile Include="Characters\Magician.cs" />
     <Compile Include="Characters\FastRunner.cs" />
     <Compile Include="Characters\Gunner.cs" />
     <Compile Include="Characters\HeavyHitter.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shop.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Weapons\Weapon.cs" />
   </ItemGroup>

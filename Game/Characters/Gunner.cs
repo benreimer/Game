@@ -11,12 +11,14 @@ namespace Game.Characters
     {
         public Gunner()
         {
-            CharacterClassName = "Gunner";
+            Class = "Gunner";
             Health = 100;
             HitPoints = 45;
             MaxSpeed = 85;
             Weapons = new Weapon();
             Armor = new Armor.Armor();
+            Coins = 100;
+            Level = 1;
         }
     }
 }

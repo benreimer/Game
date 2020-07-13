@@ -7,18 +7,21 @@ namespace Game.Characters
     [XmlInclude(typeof(Character))]
     [Serializable()]
 
-    public class HeavyHitter : Character
+    public class Magician: Character
     {
-        public HeavyHitter()
+        public int EffectiveRange;
+
+        public Magician()
         {
-            Class = "HeavyHitter";
+            Class = "FastRunner";
             Health = 100;
-            HitPoints = 60;
-            MaxSpeed = 65;
+            HitPoints = 20;
+            MaxSpeed = 100;
             Weapons = new Weapon();
             Armor = new Armor.Armor();
             Coins = 100;
             Level = 1;
+            EffectiveRange = Level * 5;
         }
     }
 }

@@ -7,18 +7,21 @@ namespace Game.Characters
     [XmlInclude(typeof(Character))]
     [Serializable()]
 
-    public class HeavyHitter : Character
+    public class Mercenary: Character
     {
-        public HeavyHitter()
+        public string Sect;
+
+        public Mercenary()
         {
-            Class = "HeavyHitter";
+            Class = "Mercenary";
             Health = 100;
-            HitPoints = 60;
-            MaxSpeed = 65;
+            HitPoints = 20;
+            MaxSpeed = 100;
             Weapons = new Weapon();
             Armor = new Armor.Armor();
             Coins = 100;
             Level = 1;
+            Sect = "Orthog";
         }
     }
 }
