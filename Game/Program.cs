@@ -8,7 +8,7 @@ namespace Game
         public string Path;
 
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Program p = new Program();
             p.Run();

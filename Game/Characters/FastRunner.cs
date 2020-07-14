@@ -16,6 +16,7 @@ namespace Game.Characters
             MaxSpeed = 100;
             Weapons = new Weapon();
             Armor = new Armor();
+            Knapsack = new Knapsack();
         }
     }
 }

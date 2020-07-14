@@ -8,12 +8,14 @@ namespace Game
 {
     public class Character
     {
+        public string CurrentLocation;
         public string CharacterClassName;
         public int Health;
         public int HitPoints;
         public int MaxSpeed;
         public Weapon Weapons;
         public Armor Armor;     
+        public Knapsack Knapsack;
 
         public void ViewStats()
         {
