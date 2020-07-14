@@ -1,20 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Characters;
+using Game.Weapons;
+using Game.Armor;
 
 namespace Game
 {
+    [Serializable()]
     public class Base
     {
         public string Location;
         public int Strength;
-        
-        public Base()
-        {   
-            //the base is where the character will originate 
-            //
-        }
+        public int Level;
+        public Armor.Armor Defense;
+        public Weapon Weapons;
     }
+}

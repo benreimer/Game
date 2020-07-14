@@ -50,10 +50,6 @@ namespace Game
             return path.Substring(6).Replace("bin\\Debug", "");
         }
 
-        public string SaveGame()
-        {
-            return "Game has been saved";
-        }        
 
         public Character CreateNewCharacter()
         {
@@ -95,6 +91,8 @@ namespace Game
             }
             return stringBuilder.ToString().Replace("&gt;", ">").Replace("&lt;", "<");
         }
+
+  
     }
 }
 

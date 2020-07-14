@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Game
 {
@@ -17,7 +20,7 @@ namespace Game
         private void Run()
         {
             Utilities utilities = new Utilities();
-            Character character = new Character();
+            Game game = new Game();
        
 
             utilities.DisplayHeader();
@@ -30,26 +33,37 @@ namespace Game
                 {
                     case "1":
                         Console.WriteLine("Start New Game");
+                        game.StartNewGame();
                         break;
                     case "2":
                         Console.WriteLine("Load Saved Game");
+                        //find absolute path - put this in utilities
+                        //https://stackoverflow.com/questions/15653921/get-current-folder-path/23513793#23513793
+                        var fileName = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        using (StreamReader reader = new StreamReader(fileName))
+                        {
+                            string json = reader.ReadToEnd();
+                            game = JsonConvert.DeserializeObject<Game>(json);
+                        }
                         break;
                     case "3":
                         Console.WriteLine("Create Character");
-                        character = utilities.CreateNewCharacter();                     
                         break;
                     case "4":
                         Console.WriteLine("Save Game Data");
-                        utilities.SaveGame();
+                        string output = JsonConvert.SerializeObject(game);
+                        string outputFile = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        File.WriteAllText(outputFile, output);
+                        Console.WriteLine("Game has been saved");
                         break;
                     case "5":
                         Console.WriteLine("View Character Stats");
-                        character.ViewStats();
+                        game.Character.ViewStats();
                         break;
                     case "6":
                         Console.WriteLine("Fight a Battle with your character");
                         Battle battle = new Battle();
-                        battle.Fight(character);
+                        battle.Fight(game.Character);
                         break;
                     case "7":
                         Environment.Exit(1);

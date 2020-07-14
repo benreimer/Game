@@ -7,19 +7,21 @@ namespace Game.Characters
     [XmlInclude(typeof(Character))]
     [Serializable()]
 
-    public class Gunner: Character
+    public class Mercenary: Character
     {
-        public Gunner()
+        public string Sect;
+
+        public Mercenary()
         {
-            Class = "Gunner";
+            Class = "Mercenary";
             Health = 100;
-            HitPoints = 45;
-            MaxSpeed = 85;
+            HitPoints = 20;
+            MaxSpeed = 100;
             Weapons = new Weapon();
             Armor = new Armor.Armor();
             Coins = 100;
             Level = 1;
-            Knapsack = new Knapsack();
+            Sect = "Orthog";
         }
     }
 }
