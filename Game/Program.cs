@@ -20,9 +20,9 @@ namespace Game
         private void Run()
         {
             Utilities utilities = new Utilities();
+            Path = utilities.GetPath();
             Game game = new Game();
        
-
             utilities.DisplayHeader();
 
             while (!ExitLoop)
@@ -39,7 +39,8 @@ namespace Game
                         Console.WriteLine("Load Saved Game");
                         //find absolute path - put this in utilities
                         //https://stackoverflow.com/questions/15653921/get-current-folder-path/23513793#23513793
-                        var fileName = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        
+                        var fileName = $@"{Path}\SavedGames\SavedGameData.json";
                         using (StreamReader reader = new StreamReader(fileName))
                         {
                             string json = reader.ReadToEnd();
@@ -52,7 +53,7 @@ namespace Game
                     case "4":
                         Console.WriteLine("Save Game Data");
                         string output = JsonConvert.SerializeObject(game);
-                        string outputFile = $@"C:\GIT\Game\Game\SavedGames\SavedGameData.json";
+                        string outputFile = $@"{Path}\SavedGames\SavedGameData.json";
                         File.WriteAllText(outputFile, output);
                         Console.WriteLine("Game has been saved");
                         break;
