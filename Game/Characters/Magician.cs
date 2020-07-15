@@ -4,9 +4,6 @@ using Game.Weapons;
 
 namespace Game.Characters
 {
-    [XmlInclude(typeof(Character))]
-    [Serializable()]
-
     public class Magician: Character
     {
         public int EffectiveRange;

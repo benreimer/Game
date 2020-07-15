@@ -1,28 +1,11 @@
 ﻿using Game.Characters;
 using System;
-using System.Text;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace Game
 {
     public class Utilities
     {
         public string Selection;
-        public int CurrentYear;
-        public int NextYear;
-        public string SqlStartDate;
-        public string SqlEndDate;
-        public string SqlFutureDate;
-
-        public Utilities()
-        {
-            CurrentYear = DateTime.Today.Year;
-            NextYear = CurrentYear + 1;
-            SqlStartDate = CurrentYear + "-10-01 00:00:00.000";
-            SqlEndDate = NextYear + "-10-01 00:00:00.000";
-            SqlFutureDate = "3000-01-01 00:00:00.000";
-        }
 
         public void DisplayHeader()
         {
@@ -74,25 +57,6 @@ namespace Game
             }
 
             return character;
-        }    
-
-        public string PrettyXml(string xml)
-        {
-            //found this at https://gist.github.com/kristopherjohnson/1430976 from SO post: https://stackoverflow.com/questions/1123718/format-xml-string-to-print-friendly-xml-string
-            var stringBuilder = new StringBuilder();
-            var element = XElement.Parse(xml);
-            var settings = new XmlWriterSettings();
-            settings.OmitXmlDeclaration = true;
-            settings.Indent = true;
-            settings.NewLineOnAttributes = false;
-            using (var xmlWriter = XmlWriter.Create(stringBuilder, settings))
-            {
-                element.Save(xmlWriter);
-            }
-            return stringBuilder.ToString().Replace("&gt;", ">").Replace("&lt;", "<");
-        }
-
-  
+        } 
     }
 }
-

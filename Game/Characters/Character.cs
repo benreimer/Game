@@ -3,7 +3,6 @@ using Game.Weapons;
 
 namespace Game.Characters
 {
-    [Serializable()]
     public class Character
     {
         public string CurrentLocation;

@@ -8,7 +8,6 @@ using Game.Armor;
 
 namespace Game
 {
-    [Serializable()]
     public class Base
     {
         public string Location;

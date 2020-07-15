@@ -15,11 +15,7 @@ namespace Game
         public Map Map;
         public Level CurrentLevel;
         public Shop Shop;
-
-        [XmlIgnore()]
-        public Utilities Utilities = new Utilities();
-
-       
+        public Utilities Utilities = new Utilities();       
 
         public void StartNewGame()
         {

@@ -2,7 +2,6 @@
 
 namespace Game.Armor
 {
-    [Serializable()]
     public class Armor
     {
         public string Name;

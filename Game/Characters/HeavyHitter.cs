@@ -4,9 +4,6 @@ using Game.Weapons;
 
 namespace Game.Characters
 {
-    [XmlInclude(typeof(Character))]
-    [Serializable()]
-
     public class HeavyHitter : Character
     {
         public HeavyHitter()

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    [Serializable()]
     public class Food
     {
     }
