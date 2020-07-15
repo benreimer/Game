@@ -22,6 +22,7 @@ namespace Game.Characters
             Coins = 100;
             Level = 1;
             EffectiveRange = Level * 5;
+            CurrentLocation = 0;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Game.Characters
 
     public class Mercenary: Character
     {
-        public string Sect;
+        public string Tribe;
 
         public Mercenary()
         {
@@ -21,7 +21,8 @@ namespace Game.Characters
             Armor = new Armor.Armor();
             Coins = 100;
             Level = 1;
-            Sect = "Orthog";
+            Tribe = "Orthog";
+            CurrentLocation = 0;
         }
     }
 }
