@@ -57,6 +57,7 @@
     <Compile Include="Characters\HeavyHitter.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Knapsack.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Program.cs" />

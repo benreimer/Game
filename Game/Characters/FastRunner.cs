@@ -20,6 +20,7 @@ namespace Game.Characters
             Coins = 100;
             Level = 1;
             CurrentLocation = 0;
+            Knapsack = new Knapsack();
         }
     }
 }

@@ -8,12 +8,14 @@ namespace Game.Characters
     [Serializable()]
     public class Character
     {
+        public string CurrentLocation;
         public string Class;
         public int Health;
         public int HitPoints;
         public int MaxSpeed;
         public int Coins;
         public Weapon Weapons;
+        public Knapsack Knapsack;
         public Armor.Armor Armor;
         public int Level;
         public int CurrentLocation;

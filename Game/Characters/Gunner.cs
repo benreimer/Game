@@ -19,6 +19,7 @@ namespace Game.Characters
             Armor = new Armor.Armor();
             Coins = 100;
             Level = 1;
+            Knapsack = new Knapsack();
             CurrentLocation = 0;
         }
     }
