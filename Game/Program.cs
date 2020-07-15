@@ -34,6 +34,7 @@ namespace Game
                     case "1":
                         Console.WriteLine("Start New Game");
                         game.StartNewGame();
+                        game.Play();
                         break;
                     case "2":
                         Console.WriteLine("Load Saved Game");
@@ -46,6 +47,8 @@ namespace Game
                             string json = reader.ReadToEnd();
                             game = JsonConvert.DeserializeObject<Game>(json);
                         }
+
+                        game.Play();
                         break;
                     case "3":
                         Console.WriteLine("Create Character");

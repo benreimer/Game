@@ -1,1 +1,9 @@
 ﻿This will be a file that I use to store ideas of game play and what the characters will be able to do and what I want the game flow to look like.
+
+
+
+1. Come up with a way to randomly create events (run into enemy, find weapon, find coins, etc)
+see: https://stackoverflow.com/questions/32978619/random-event-system-in-c-sharp-how-to-do-it
+
+2. Will need to create a way to show available paths.  Each path will lead to the same desitination but the elements of that path will be different
+
