@@ -1,6 +1,4 @@
-﻿using System;
-using System.Xml.Serialization;
-using Game.Weapons;
+﻿using Game.Weapons;
 
 namespace Game.Characters
 {

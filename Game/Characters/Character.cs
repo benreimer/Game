@@ -1,13 +1,11 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Threading;
 using Game.Weapons;
 
 namespace Game.Characters
 {
     public class Character
     {
-        public string CurrentLocation;
+        //public string CurrentLocation;
         public string Class;
         public int Health;
         public int HitPoints;

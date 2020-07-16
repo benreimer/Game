@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Game.Weapons
+﻿namespace Game.Weapons
 {
     public class Weapon
     {

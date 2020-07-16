@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Game.Armor
+﻿namespace Game.Armor
 {
     public class Armor
     {
