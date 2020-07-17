@@ -1,11 +1,60 @@
 ﻿using Game.Characters;
 using System;
+using Game.Menu;
+using System.Linq;
 
 namespace Game
 {
     public class Utilities
     {
         public string Selection;
+
+
+        //public void LoadMenu(string menuSelections)
+        public void LoadMenu(IMenu[] commands)
+        {
+            //string typex = typeof(StartNewGame).AssemblyQualifiedName;
+
+            //var count = menuSelections.ToArray().Length;
+           // IMenu[] commands = new IMenu[count];
+
+            //foreach (var menuItem in menuSelections.Split(','))
+            //{
+              //  var a = (IMenu)Activator.CreateInstance(null, $"Game.IMenu.{menuItem}");
+
+               // commands.Append(a);
+               // Console.WriteLine(menuItem);
+           // }
+
+           // var a = (IMenu)Activator.CreateInstance(null, childClassString);
+
+            
+           // IMenu[] commands = new IMenu[]
+           // {               
+             //   new StartNewGame(),
+             //   new LoadSavedGame()
+           // };
+            
+            Console.WriteLine("What do you want to do?");
+
+            // This loop creates a list of commands:
+            for (int i = 0; i < commands.Length; i++)
+            {
+                Console.WriteLine("{0}. {1}", i + 1, commands[i].Description);
+            }
+
+            // Read until the input is valid.
+            var userChoice = string.Empty;
+            var commandIndex = -1;
+            do
+            {
+                userChoice = Console.ReadLine();
+            }
+            while (!int.TryParse(userChoice, out commandIndex) || commandIndex > commands.Length);
+
+            // Execute the command.
+            commands[commandIndex - 1].Execute();
+        }
 
         public void DisplayHeader()
         {

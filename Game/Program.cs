@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using Game.Menu;
 
 namespace Game
 {
@@ -10,6 +11,7 @@ namespace Game
     {
         public bool ExitLoop;
         public string Path;
+        public Utilities Utilities = new Utilities();
 
         //disable console app close menu
         //code was found here: https://social.msdn.microsoft.com/Forums/vstudio/en-US/545f1768-8038-4f7a-9177-060913d6872f/disable-close-button-in-console-application-in-c?forum=csharpgeneral
@@ -42,17 +44,28 @@ namespace Game
 
         private void Run()
         {
-            Utilities utilities = new Utilities();
-            Path = utilities.GetPath();
+           // Utilities utilities = new Utilities();
+            Path = Utilities.GetPath();
             Game game = new Game();
 
-            utilities.DisplayHeader();
+            //utilities.LoadMenu("StartNewGame,LoadSavedGame");
+            IMenu[] commands = new IMenu[]
+           {
+                new StartNewGame(),
+                new LoadSavedGame()
+           };
+            Utilities.LoadMenu(commands);
+
+            
+            
+
+            Utilities.DisplayHeader();
 
             while (!ExitLoop)
             {
-                utilities.DisplayMenu();
+                Utilities.DisplayMenu();
 
-                switch (utilities.Selection)
+                switch (Utilities.Selection)
                 {
                     case "1":
                         Console.WriteLine("Start New Game");
