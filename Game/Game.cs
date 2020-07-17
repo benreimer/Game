@@ -1,6 +1,5 @@
 ﻿using System;
 using Game.Characters;
-using Game.Menu;
 
 namespace Game
 {
@@ -35,24 +34,10 @@ namespace Game
         {
             Console.WriteLine("You are now playing the game....add game elements here...");
 
-            IMenu[] commands = new IMenu[]
-          {
-                new OptionA(),
-                new OptionB()
-          };
-            Utilities.LoadMenu(commands);
-
+            Utilities.LoadMenu("OptionA,OptionB");
 
             CurrentPath = Map.Paths[0];
             Character.Move(CurrentPath);
-
-
-
-
-        }
-
-        internal class Menu
-        {
         }
     }
 }

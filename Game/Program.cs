@@ -3,7 +3,6 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Diagnostics;
-using Game.Menu;
 
 namespace Game
 {
@@ -44,20 +43,10 @@ namespace Game
 
         private void Run()
         {
-           // Utilities utilities = new Utilities();
             Path = Utilities.GetPath();
             Game game = new Game();
 
-            //utilities.LoadMenu("StartNewGame,LoadSavedGame");
-            IMenu[] commands = new IMenu[]
-           {
-                new StartNewGame(),
-                new LoadSavedGame()
-           };
-            Utilities.LoadMenu(commands);
-
-            
-            
+            Utilities.LoadMenu("StartNewGame,LoadSavedGame");
 
             Utilities.DisplayHeader();
 

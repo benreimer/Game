@@ -10,31 +10,30 @@ namespace Game
         public string Selection;
 
 
-        //public void LoadMenu(string menuSelections)
-        public void LoadMenu(IMenu[] commands)
+        public void LoadMenu(string menuSelections)
         {
-            //string typex = typeof(StartNewGame).AssemblyQualifiedName;
+            var count = menuSelections.Split((',')).Length;
+            IMenu[] commands = new IMenu[0];
 
-            //var count = menuSelections.ToArray().Length;
-           // IMenu[] commands = new IMenu[count];
+            foreach (var menuItem in menuSelections.Split(','))
+            {
+                try
+                {
+                    var type = Type.GetType("Game.Menu." + menuItem);
+                    var myObject = (IMenu)Activator.CreateInstance(type);
 
-            //foreach (var menuItem in menuSelections.Split(','))
-            //{
-              //  var a = (IMenu)Activator.CreateInstance(null, $"Game.IMenu.{menuItem}");
+                    Array.Resize(ref commands, commands.Length + 1);
+                    commands[commands.Length - 1] = myObject;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Invalid Menu Item passed to menu function - no method exists for this MenuSelection: {menuItem}");
+                    Console.WriteLine($"Press any key to exit...");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+            }
 
-               // commands.Append(a);
-               // Console.WriteLine(menuItem);
-           // }
-
-           // var a = (IMenu)Activator.CreateInstance(null, childClassString);
-
-            
-           // IMenu[] commands = new IMenu[]
-           // {               
-             //   new StartNewGame(),
-             //   new LoadSavedGame()
-           // };
-            
             Console.WriteLine("What do you want to do?");
 
             // This loop creates a list of commands:
