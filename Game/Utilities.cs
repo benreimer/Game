@@ -1,7 +1,5 @@
 ﻿using Game.Characters;
 using System;
-using Game.Menu;
-using System.Linq;
 
 namespace Game
 {
@@ -19,11 +17,8 @@ namespace Game
             {
                 try
                 {
-                    var type = Type.GetType("Game.Menu." + menuItem);
-                    var myObject = (IMenu)Activator.CreateInstance(type);
-
                     Array.Resize(ref commands, commands.Length + 1);
-                    commands[commands.Length - 1] = myObject;
+                    commands[commands.Length - 1] = (IMenu)Activator.CreateInstance(Type.GetType("Game.Menu." + menuItem));
                 }
                 catch (Exception e)
                 {
