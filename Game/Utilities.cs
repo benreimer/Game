@@ -7,8 +7,13 @@ namespace Game
     {
         public string Selection;
 
+        public void LoadMainMenu(Game game, Utilities utilities)
+        {
+          //  LoadMenu(game, utilities, "StartNewGame,LoadSavedGame,SaveGameData,ViewCharacterStats,Battle,Exit");
+            LoadMenu(game, utilities, "StartNewGame,LoadSavedGame,Exit");
+        }
 
-        public void LoadMenu(string menuSelections)
+        public void LoadMenu(Game game, Utilities utilities, string menuSelections)
         {
             var count = menuSelections.Split((',')).Length;
             IMenu[] commands = new IMenu[0];
@@ -47,7 +52,7 @@ namespace Game
             while (!int.TryParse(userChoice, out commandIndex) || commandIndex > commands.Length);
 
             // Execute the command.
-            commands[commandIndex - 1].Execute();
+            commands[commandIndex - 1].Execute(game, utilities);
         }
 
         public void DisplayHeader()

@@ -1,16 +1,13 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.InteropServices;
-using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace Game
 {
     public class Program
     {
-        public bool ExitLoop;
-        public string Path;
-        public Utilities Utilities = new Utilities();
+       public Utilities Utilities = new Utilities();
+       public Game CurrentGame = new Game();
 
         //disable console app close menu
         //code was found here: https://social.msdn.microsoft.com/Forums/vstudio/en-US/545f1768-8038-4f7a-9177-060913d6872f/disable-close-button-in-console-application-in-c?forum=csharpgeneral
@@ -26,12 +23,10 @@ namespace Game
         internal const uint MF_GRAYED = 0x00000001;
         internal const uint MF_BYCOMMAND = 0x00000000;
         //end disable console app close menu
-           
-
+    
         [STAThread]
         public static void Main(string[] args)
         {
-
             IntPtr hMenu = Process.GetCurrentProcess().MainWindowHandle;
             IntPtr hSystemMenu = GetSystemMenu(hMenu, false);
             EnableMenuItem(hSystemMenu, SC_CLOSE, MF_GRAYED);
@@ -43,64 +38,12 @@ namespace Game
 
         private void Run()
         {
-            Path = Utilities.GetPath();
-            Game game = new Game();
-
-            Utilities.LoadMenu("StartNewGame,LoadSavedGame");
-
             Utilities.DisplayHeader();
-
-            while (!ExitLoop)
-            {
-                Utilities.DisplayMenu();
-
-                switch (Utilities.Selection)
-                {
-                    case "1":
-                        Console.WriteLine("Start New Game");
-                        game.StartNewGame();
-                        game.Play();
-                        break;
-                    case "2":
-                        Console.WriteLine("Load Saved Game");
-                        var fileName = $@"{Path}\SavedGames\SavedGameData.json";
-                        using (StreamReader reader = new StreamReader(fileName))
-                        {
-                            string json = reader.ReadToEnd();
-                            game = JsonConvert.DeserializeObject<Game>(json);
-                        }
-                        game.Play();
-                        break;
-                    case "3":
-                        Console.WriteLine("Create Character");
-                        break;
-                    case "4":
-                        Console.WriteLine("Save Game Data");
-                        string output = JsonConvert.SerializeObject(game);
-                        string outputFile = $@"{Path}\SavedGames\SavedGameData.json";
-                        File.WriteAllText(outputFile, output);
-                        Console.WriteLine("Game has been saved");
-                        break;
-                    case "5":
-                        Console.WriteLine("View Character Stats");
-                        game.Character.ViewStats();
-                        break;
-                    case "6":
-                        Console.WriteLine("Fight a Battle with your character");
-                        Battle battle = new Battle();
-                        battle.Fight(game.Character);
-                        break;
-                    case "7":
-                        Environment.Exit(1);
-                        break;
-                    default:
-                        string errorMsg = "You have made an invalid selection.....";
-                        Console.WriteLine(errorMsg);
-                        Console.ReadLine();
-                        Environment.Exit(1);
-                        break;
-                }
-            }
+            Utilities.LoadMainMenu(CurrentGame, Utilities);
+            
+            Console.WriteLine("Press any key to exit");
+            Console.ReadLine();
+            Environment.Exit(0);
         }
     }
 }

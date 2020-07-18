@@ -13,6 +13,7 @@ namespace Game
         public Shop Shop;
         public QuestPath CurrentPath;
         public Utilities Utilities = new Utilities();
+        public Battle Battle;
 
         public void StartNewGame()
         {
@@ -21,6 +22,7 @@ namespace Game
             Console.WriteLine("");
             Character = Utilities.CreateNewCharacter();
             Base = new Base();
+            Battle = new Battle();
             Console.WriteLine("Would you like to Load A Map or start with the Default Map?");
             Map = new Map();
             Map = Map.LoadDefaultMap();
@@ -32,12 +34,12 @@ namespace Game
 
         public void Play()
         {
-            Console.WriteLine("You are now playing the game....add game elements here...");
-
-            Utilities.LoadMenu("OptionA,OptionB");
-
             CurrentPath = Map.Paths[0];
             Character.Move(CurrentPath);
+
+            Console.WriteLine("You are now playing the game....add more game elements here...");
+
+            Utilities.LoadMenu(this, Utilities, "SaveGameData,ViewCharacterStats,Battle,Exit");
         }
     }
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Game
+﻿namespace Game
 {
     public interface IMenu
     {
         string Description { get;  }
-        void Execute();
+        void Execute(Game game, Utilities utilities);
     }
 }
