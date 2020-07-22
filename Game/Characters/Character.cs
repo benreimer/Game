@@ -5,7 +5,6 @@ namespace Game.Characters
 {
     public class Character
     {
-        //public string CurrentLocation;
         public string Class;
         public int Health;
         public int HitPoints;
@@ -32,11 +31,16 @@ namespace Game.Characters
             //for now just increment them 
             CurrentLocation += MaxSpeed;
 
-            if (CurrentLocation > 50)
-            {
-                Console.WriteLine("You found 200 Coins. They have been added to your inventory.");
-                Coins += 200;
+            if(CurrentLocation > path.Length)
+            {         
+                CurrentLocation = path.Length;
             }
+
+           // if (CurrentLocation > 50)
+           // {
+           //     Console.WriteLine("You found 200 Coins. They have been added to your inventory.");
+           //     Coins += 200;
+          //  }
         }
     }
 }

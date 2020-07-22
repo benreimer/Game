@@ -64,8 +64,10 @@
     <Compile Include="Level.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu\Battle.cs" />
+    <Compile Include="Menu\KeepOnMoving.cs" />
     <Compile Include="Menu\LoadSavedGame.cs" />
     <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Menu\PickItUp.cs" />
     <Compile Include="Menu\SaveGameData.cs" />
     <Compile Include="Menu\StartNewGame.cs" />
     <Compile Include="Menu\ViewCharacterStats.cs" />

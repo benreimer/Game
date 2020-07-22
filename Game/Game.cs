@@ -35,11 +35,38 @@ namespace Game
         public void Play()
         {
             CurrentPath = Map.Paths[0];
-            Character.Move(CurrentPath);
 
             Console.WriteLine("You are now playing the game....add more game elements here...");
 
+
+            while (this.Character.CurrentLocation < CurrentPath.Length)
+            {
+                Character.Move(CurrentPath);
+                CheckCurrentLocation();
+                
+
+            }
+            //  while
+
+
             Utilities.LoadMenu(this, Utilities, "SaveGameData,ViewCharacterStats,Battle,Exit");
+        }
+
+        private void CheckCurrentLocation()
+        {
+            if(Character.CurrentLocation > CurrentPath.Weapon.Location && CurrentPath.Weapon.Found == false)
+            {
+                Character.CurrentLocation = CurrentPath.Weapon.Location;
+                CurrentPath.Weapon.Found = true;
+                Console.WriteLine($"You found a {CurrentPath.Weapon.Name}. What would you like to do?");
+                Utilities.LoadMenu(this, Utilities, "PickItUp,KeepOnMoving");
+            }
+
+            if(Character.CurrentLocation == CurrentPath.Length)
+            {
+                Console.WriteLine("You made it to the end of the path!");
+            }
+          
         }
     }
 }

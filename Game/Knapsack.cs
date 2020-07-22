@@ -1,14 +1,18 @@
+using Game.Weapons;
+using System.Collections.Generic;
+
 namespace Game
 {
     public class Knapsack
     {
         public int Level;
         public int MaxItems;
+        public List<Weapon> Weapons;
 
         public Knapsack()
         {
-            //the base is where the character will originate 
-            //
+            Weapons = new List<Weapon>();
+       
         }
     }
 }
