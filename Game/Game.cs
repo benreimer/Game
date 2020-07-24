@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using Game.Characters;
 
 namespace Game
@@ -41,7 +42,7 @@ namespace Game
 
             while (this.Character.CurrentLocation < CurrentPath.Length)
             {
-                Character.Move(CurrentPath);
+                Character.MoveForward(CurrentPath);
                 CheckCurrentLocation();
                 
 
@@ -54,14 +55,43 @@ namespace Game
 
         private void CheckCurrentLocation()
         {
-            if(Character.CurrentLocation > CurrentPath.Weapon.Location && CurrentPath.Weapon.Found == false)
+            //check to see if you are at the location of another path
+            foreach (AdventurePath path in CurrentPath.PathList)
             {
-                Character.CurrentLocation = CurrentPath.Weapon.Location;
-                CurrentPath.Weapon.Found = true;
-                Console.WriteLine($"You found a {CurrentPath.Weapon.Name}. What would you like to do?");
-                Utilities.LoadMenu(this, Utilities, "PickItUp,KeepOnMoving");
+                //if current location is characters max speed than the path found at this location would be the parent path and I don't want that one so look for others
+                if (Character.CurrentLocation > path.Location && Character.CurrentLocation != Character.MaxSpeed)   
+                {
+                    Console.WriteLine($"You found a new path. What would you like to do?");
+                    Utilities.LoadMenu(this,Utilities,"GoBack,KeepOnMoving,TakeNewPath");
+                }
+
+                ////check to see if you are back at the "Parent" Quest Path
+                //if (path.ParentPath != null && Character.CurrentLocation == path.ParentPath.Location)
+                //{
+                //    Console.WriteLine($"You are back to {path.ParentPath.Name}. What would you like to do?");
+                //    Utilities.LoadMenu(this, Utilities, "GoBack,KeepOnMoving,TakeNewPath");
+
+                //}
+                
             }
 
+           
+
+
+
+            //check for a weapon of any kind
+            if (CurrentPath.Weapon != null)
+            {
+                if (Character.CurrentLocation > CurrentPath.Weapon.Location && CurrentPath.Weapon?.Found == false)
+                {
+                    Character.CurrentLocation = CurrentPath.Weapon.Location;
+                    CurrentPath.Weapon.Found = true;
+                    Console.WriteLine($"You found a {CurrentPath.Weapon.Name}. What would you like to do?");
+                    Utilities.LoadMenu(this, Utilities, "PickItUp,KeepOnMoving,GoBack");
+                }
+            }
+
+            //check for the end of the current patch
             if(Character.CurrentLocation == CurrentPath.Length)
             {
                 Console.WriteLine("You made it to the end of the path!");

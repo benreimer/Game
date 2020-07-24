@@ -8,19 +8,17 @@ namespace Game
     {
         public string Name;
         public int Length;
+        public int Location;
         public Weapon Weapon;
+        public List<AdventurePath> PathList = new List<AdventurePath>();
 
 
         public QuestPath(string name, int length)
         {
             Name = name;
             Length = length;
-            Weapon = new Weapon
-            {
-                Name = "Knife",
-                Damage = 200,
-                Location = 125
-            };
+            PathList.Add(new AdventurePath { Name = "NewPath", Length = 125, Location = 100 });
+           
         }
     }
 }

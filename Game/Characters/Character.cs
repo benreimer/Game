@@ -42,5 +42,26 @@ namespace Game.Characters
            //     Coins += 200;
           //  }
         }
+
+        public void MoveForward(QuestPath path)
+        {
+            CurrentLocation += MaxSpeed;
+
+            if (CurrentLocation > path.Length)
+            {
+                CurrentLocation = path.Length;
+            }
+        }
+
+
+        public void MoveBackward(QuestPath path)
+        {
+            CurrentLocation -= MaxSpeed;
+
+            if (CurrentLocation < 0)
+            {
+                CurrentLocation = 0;
+            }
+        }
     }
 }

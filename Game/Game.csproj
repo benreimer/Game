@@ -59,11 +59,13 @@
     <Compile Include="Game.cs" />
     <Compile Include="Menu\CreateCharacter.cs" />
     <Compile Include="Menu\Exit.cs" />
+    <Compile Include="Menu\TakeNewPath.cs" />
     <Compile Include="Menu\IMenu.cs" />
     <Compile Include="Knapsack.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu\Battle.cs" />
+    <Compile Include="Menu\GoBack.cs" />
     <Compile Include="Menu\KeepOnMoving.cs" />
     <Compile Include="Menu\LoadSavedGame.cs" />
     <Compile Include="Menu\Menu.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Menu\ViewCharacterStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdventurePath.cs" />
     <Compile Include="QuestPath.cs" />
     <Compile Include="Shop.cs" />
     <Compile Include="Utilities.cs" />

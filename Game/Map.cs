@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game.Weapons;
 
 namespace Game
 {
@@ -9,7 +10,15 @@ namespace Game
         public Map LoadDefaultMap()
         {
             List<QuestPath> defaultPaths = new List<QuestPath>();
-            defaultPaths.Add(new QuestPath("Path1", 300));
+            defaultPaths.Add(new QuestPath("Path1", 300)
+            {
+                Weapon = new Weapon
+                {
+                    Name = "Knife",
+                    Damage = 200,
+                    Location = 125
+                }
+        });
             defaultPaths.Add(new QuestPath("Path2", 350));
             defaultPaths.Add(new QuestPath("Path3", 400));
 
