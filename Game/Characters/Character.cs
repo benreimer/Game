@@ -15,7 +15,6 @@ namespace Game.Characters
         public Knapsack Knapsack;
         public Armor.Armor Armor;
         public int Level;
-        //public int CurrentLocation;
         public Location CurrentLocation;
 
 
@@ -42,44 +41,6 @@ namespace Game.Characters
             Console.WriteLine("Your current location is the " + CurrentLocation.Name);
             CurrentLocation.DisplayMenu(game, new Utilities());
 
-
-            //this will eventually have a timer or something to control character movement along the path
-            //for now just increment them 
-            //   CurrentLocation += MaxSpeed;
-
-            //if(CurrentLocation > path.Length)
-            //{         
-            //    CurrentLocation = path.Length;
-            //}
-
-            // if (CurrentLocation > 50)
-            // {
-            //     Console.WriteLine("You found 200 Coins. They have been added to your inventory.");
-            //     Coins += 200;
-            //  }
         }
-
-        public void MoveForward(QuestPath path)
-        {
-         //   CurrentLocation += MaxSpeed;
-
-            //if (CurrentLocation > path.Length)
-            //{
-            //    CurrentLocation = path.Length;
-            //}
-        }
-
-
-        public void MoveBackward(QuestPath path)
-        {
-           // CurrentLocation -= MaxSpeed;
-
-           // if (CurrentLocation < 0)
-           // {
-             //   CurrentLocation = 0;
-          //  }
-        }
-
-       
     }
 }

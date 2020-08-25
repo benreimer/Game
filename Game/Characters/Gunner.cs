@@ -17,7 +17,6 @@ namespace Game.Characters
             Level = 1;
             Knapsack = new Knapsack();
             CurrentLocation = new Base();
-          //  CurrentLocation = 0;
         }
     }
 }

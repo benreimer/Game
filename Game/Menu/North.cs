@@ -8,7 +8,6 @@ namespace Game.Menu
         public string Description => $"Go {direction}";
         public void Execute(Game game, Utilities utilities)
         {
-            //Console.WriteLine("Go North");
             game.Character.Move(game,direction);            
         }
     }

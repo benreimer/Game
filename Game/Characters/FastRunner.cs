@@ -16,7 +16,6 @@ namespace Game.Characters
             Coins = 100;
             Level = 1;
             CurrentLocation = new Base();
-           // CurrentLocation = 0;
             Knapsack = new Knapsack();
         }
     }
