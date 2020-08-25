@@ -1,24 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Game.Weapons;
 
 namespace Game.Locations
 {
-    public class Base: Location
+    public class Lake : Location
     {
-        public int Strength;
-        public int Level;
-        public Armor.Armor Defense;
-        public Weapon Weapons;
-        
-        public Base()
+        public Lake()
         {
-            Name = "Base";
+            Name = "Lake";
             AvailableDirections = new List<Direction>
             {
                 new Direction
                 {
-                    Value = "East",
+                    Value = "South",
                     Destination = "Gate"
                 }
             };
@@ -27,12 +21,14 @@ namespace Game.Locations
 
         public override void DisplayMenu(Game game, Utilities utilities)
         {
-            utilities.LoadMenu(game,utilities,GetMenuItems());
+            utilities.LoadMenu(game, utilities, GetMenuItems());
         }
 
         private string GetMenuItems()
         {
             return this.AvailableDirections.Aggregate("", (current, direction) => current + $"{direction.Value},").TrimEnd(',');
         }
+
+      
     }
 }

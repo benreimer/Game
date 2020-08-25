@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Armor\Armor.cs" />
     <Compile Include="Locations\Location.cs" />
+    <Compile Include="Locations\Gate.cs" />
+    <Compile Include="Locations\Lake.cs" />
     <Compile Include="Locations\Woods.cs" />
     <Compile Include="Locations\Town.cs" />
     <Compile Include="Locations\Cabin.cs" />

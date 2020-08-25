@@ -16,7 +16,10 @@ namespace Game
         {
             LocationList = new List<Location>
             {
+                //todo  each time I add a new type of location I have to come add it here.   is there a better way of doing this?
                 new Base(),
+                new Gate(),
+                new Lake(),
                 new Cabin(),
                 new Woods(),
                 new Town()
