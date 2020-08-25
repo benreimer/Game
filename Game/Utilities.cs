@@ -57,8 +57,8 @@ namespace Game
 
         public void DisplayHeader()
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("GAME TITLE");
+            //Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Zukas's Adventure\r\n An IF Adventure Game \r\n");
         }
 
         public void DisplayMenu()

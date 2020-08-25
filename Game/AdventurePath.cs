@@ -1,8 +1,4 @@
-﻿using Game.Weapons;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
-namespace Game
+﻿namespace Game
 {
     public class AdventurePath
     {

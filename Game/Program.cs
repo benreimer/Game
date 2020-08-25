@@ -40,10 +40,6 @@ namespace Game
         {
             Utilities.DisplayHeader();
             Utilities.LoadMainMenu(CurrentGame, Utilities);
-            
-            Console.WriteLine("Press any key to exit");
-            Console.ReadLine();
-            Environment.Exit(0);
         }
     }
 }

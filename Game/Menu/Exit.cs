@@ -19,6 +19,8 @@ namespace Game.Menu
             {
                 case "Y":
                     utilities.LoadMenu(game, utilities, "SaveGame");
+                    //todo check to make sure the game was saved correctly and then exit
+                    Environment.Exit(0);
                     break;
                 case "N":
                     Environment.Exit(0);

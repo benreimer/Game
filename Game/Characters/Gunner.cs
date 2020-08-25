@@ -1,4 +1,5 @@
-﻿using Game.Weapons;
+﻿using Game.Locations;
+using Game.Weapons;
 
 namespace Game.Characters
 {
@@ -15,7 +16,8 @@ namespace Game.Characters
             Coins = 100;
             Level = 1;
             Knapsack = new Knapsack();
-            CurrentLocation = 0;
+            CurrentLocation = new Base();
+          //  CurrentLocation = 0;
         }
     }
 }

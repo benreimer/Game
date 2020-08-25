@@ -17,7 +17,7 @@ namespace Game.Characters
             Coins = 100;
             Level = 1;
             Tribe = "Orthog";
-            CurrentLocation = 0;
+           // CurrentLocation = 0;
         }
     }
 }

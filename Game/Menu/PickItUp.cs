@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Game.Menu
+﻿namespace Game.Menu
 {
     class PickItUp : IMenu
     {
@@ -12,8 +6,8 @@ namespace Game.Menu
         public void Execute(Game game, Utilities utilities)
         {
 
-            Console.WriteLine($"You picked up the {game.CurrentPath.Weapon.Name}");
-            game.Character.Knapsack.Weapons.Add(game.CurrentPath.Weapon);
+          //  Console.WriteLine($"You picked up the {game.CurrentPath.Weapon.Name}");
+           // game.Character.Knapsack.Weapons.Add(game.CurrentPath.Weapon);
         }
     }
 }

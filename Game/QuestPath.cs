@@ -1,24 +1,26 @@
-﻿using Game.Weapons;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using Game.Locations;
 
 namespace Game
 {
     public class QuestPath
     {
-        public string Name;
-        public int Length;
-        public int Location;
-        public Weapon Weapon;
-        public List<AdventurePath> PathList = new List<AdventurePath>();
+        //public string Name;
+        //public int Length;
+        public List<Location> LocationList;
+        //public Weapon Weapon;
+       // public List<AdventurePath> PathList = new List<AdventurePath>();
 
 
-        public QuestPath(string name, int length)
+        public QuestPath()
         {
-            Name = name;
-            Length = length;
-            PathList.Add(new AdventurePath { Name = "NewPath", Length = 125, Location = 100 });
-           
+            LocationList = new List<Location>
+            {
+                new Base(),
+                new Cabin(),
+                new Woods(),
+                new Town()
+            };
         }
     }
 }
