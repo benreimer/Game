@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Game.Locations
@@ -17,11 +18,17 @@ namespace Game.Locations
                 }
             };
             Items = "Item1,Item2,Item3";
+            Greeting = "You are at the Lake. You can go fishing if you have a fishing pole.";
         }
 
         public override void DisplayMenu(Game game, Utilities utilities)
         {
+            Console.WriteLine(Greeting);
+            Console.WriteLine("You have caught a fish!");
+            game.Character.Knapsack.Items.Add("Fish");
+
             utilities.LoadMenu(game, utilities, GetMenuItems());
+
         }
 
         private string GetMenuItems()

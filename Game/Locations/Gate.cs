@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Game.Locations
@@ -19,18 +20,27 @@ namespace Game.Locations
                 {
                     Value = "West",
                     Destination = "Base"
-                },
-                new Direction
-                {
-                    Value = "East",
-                    Destination = "Cabin"
                 }
             };
             Items = "Item1,Item2,Item3";
+            Greeting = "You are at the gate you must catch some fish before the guard will open the gate.";
+
         }
 
         public override void DisplayMenu(Game game, Utilities utilities)
         {
+            if (game.Character.Knapsack.Items.Contains("Fish"))
+            {
+                Greeting = "You have given the guard a fish and he has now opened the gate!";
+                AvailableDirections.Add(new Direction
+                {
+                    Value = "East",
+                    Destination = "Cabin"
+                });
+            }
+            
+            
+            Console.WriteLine(Greeting);
             utilities.LoadMenu(game, utilities, GetMenuItems());
         }
 

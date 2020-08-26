@@ -13,6 +13,7 @@ namespace Game.Locations
 
         public List<Direction> AvailableDirections { get; set; }
 
+        public string Greeting { get; set; }
 
         public virtual void DisplayMenu(Game game, Utilities utilities) { }
     }

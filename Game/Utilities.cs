@@ -34,7 +34,7 @@ namespace Game
                 }
             }
 
-            Console.WriteLine("What do you want to do?");
+            // Console.WriteLine("What do you want to do?");
 
             // This loop creates a list of commands:
             for (int i = 0; i < commands.Length; i++)

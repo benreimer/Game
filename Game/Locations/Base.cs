@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Game.Weapons;
 
@@ -23,10 +24,12 @@ namespace Game.Locations
                 }
             };
             Items = "Item1,Item2,Item3";
+            Greeting = "You are currently at your base. From here the road goes East.";
         }
 
         public override void DisplayMenu(Game game, Utilities utilities)
         {
+            Console.WriteLine(Greeting);
             utilities.LoadMenu(game,utilities,GetMenuItems());
         }
 
