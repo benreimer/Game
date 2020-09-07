@@ -7,7 +7,7 @@ namespace Game.Menu
         public string Description => "Create Character";
         public void Execute(Game game, Utilities utilities) 
         {
-            Console.WriteLine("Create Charater menu item");
+            Console.WriteLine("Create Character menu item");
         }
     }
 }

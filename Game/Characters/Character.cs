@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Locations;
 using Game.Weapons;
 
 namespace Game.Characters
@@ -14,7 +15,8 @@ namespace Game.Characters
         public Knapsack Knapsack;
         public Armor.Armor Armor;
         public int Level;
-        public int CurrentLocation;
+        public Location CurrentLocation;
+
 
         public void ViewStats()
         {
@@ -25,43 +27,20 @@ namespace Game.Characters
             Console.WriteLine($"Max Speed: {MaxSpeed}");
         }
 
-        public void Move(QuestPath path)
+        public void Move(Game game, string directionToMove)
         {
-            //this will eventually have a timer or something to control character movement along the path
-            //for now just increment them 
-            CurrentLocation += MaxSpeed;
+            var a = 1;
 
-            if(CurrentLocation > path.Length)
-            {         
-                CurrentLocation = path.Length;
-            }
+            //this needs to be converted to a menu item
+            var previousLocation = CurrentLocation;
+            
 
-           // if (CurrentLocation > 50)
-           // {
-           //     Console.WriteLine("You found 200 Coins. They have been added to your inventory.");
-           //     Coins += 200;
-          //  }
-        }
+            var nextLocation = CurrentLocation.AvailableDirections.Find(d => d.Value == directionToMove);
+            CurrentLocation = game.CurrentPath.LocationList.Find(l => l.Name == nextLocation.Destination);
 
-        public void MoveForward(QuestPath path)
-        {
-            CurrentLocation += MaxSpeed;
+            Console.WriteLine("Your current location is the " + CurrentLocation.Name);
+            CurrentLocation.DisplayMenu(game, new Utilities());
 
-            if (CurrentLocation > path.Length)
-            {
-                CurrentLocation = path.Length;
-            }
-        }
-
-
-        public void MoveBackward(QuestPath path)
-        {
-            CurrentLocation -= MaxSpeed;
-
-            if (CurrentLocation < 0)
-            {
-                CurrentLocation = 0;
-            }
         }
     }
 }
